@@ -141,7 +141,7 @@ static BOOL shouldFixCase$ = NO;
     // NOTE: Only modify the result if the key represents a lowercase letter.
     // NOTE: It might be safe to always return the 'full represented string',
     //       but this has not been confirmed.
-    return ([[self name] rangeOfString:@"-Small-"].location != NSNotFound) ? [self representedString] : %orig();
+    return ([[self name] rangeOfString:@"-Small-"].location != NSNotFound && [self representedString] != nil) ? [self representedString] : %orig();
 }
 
 %end %end
