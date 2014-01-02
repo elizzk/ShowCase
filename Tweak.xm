@@ -138,7 +138,7 @@ static BOOL shouldFixCase$ = NO;
 - (NSString *)displayString
 {
     NSString *result = %orig();
-    return [[self name] rangeOfString:@"-Small-"].location != NSNotFound ? [result lowercaseString] : result;
+    return [[self name] rangeOfString:@"-Small-"].location != NSNotFound ? ([result isEqualToString:@"I"] ? @"ı" : [result lowercaseString]) : result;
 }
 
 %end %end
